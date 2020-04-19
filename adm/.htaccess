@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+
+	RewriteEngine On
+
+	#RewriteRule ^ http://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+	# Páginas
+
+	RewriteRule ^painel/?$ index.php [NC,L]
+
+	
+	RewriteRule ^produtos/?$ produtos.php [NC,L]
+	RewriteRule ^cad_produto/?$ cad_produto.php [NC,L]
+
+
+
+</IfModule>
