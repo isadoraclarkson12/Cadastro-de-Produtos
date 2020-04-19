@@ -109,5 +109,14 @@ class Produtos_model extends Commons_model
 			return TRUE;
 		}
 	}
+	public function deletar($id){
+		$this->db->where_in('id_produto', $id);
+		$this->db->delete('produto_cor');
+		$this->db->where('id_produto', $id);
+		$this->db->delete('produto');
+		
+
+		return $this->db->affected_rows();
+	}
 	
 }

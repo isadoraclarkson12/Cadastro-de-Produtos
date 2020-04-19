@@ -176,6 +176,19 @@ $(document.body).on("click", ".btnExcluir", function (ev) {
 $('#rodapeModal').html('<button type="button" class="btn btn-outline-warning waves-effect" data-dismiss="modal">Sair</button><button type="button" class="btn btn-warning confirmarExc" data-id="'+$(this).attr('data-id')+'">Remover</button>');
     $('#modalPadrao').modal('show');
 
+});
 
-
+$(document.body).on("click", ".confirmarExc", function (ev) {
+    $.ajax({
+  method: "POST",
+  url: "../api/produtos/deletar",
+  data: { id: $(this).attr('data-id')}
+}).done(function (r) {
+    $('#modalPadrao').modal('hide');
+    alert(r.message);
+    listarProdutos();
+}).fail(function (r) {
+    $('#modalPadrao').modal('hide');
+    alert(r.message);
+});
 });

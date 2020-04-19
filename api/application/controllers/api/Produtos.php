@@ -92,7 +92,7 @@ class Produtos extends Commons
 
          $return = $this->produtos_model->deletar($this->post('id'));
 
-        if (sizeof($return) > 0) {
+        if ($return > 0) {
         
             return parent::set_response(['status'  => true, 'message' => 'Produto removido com sucesso'], 200);
         }
