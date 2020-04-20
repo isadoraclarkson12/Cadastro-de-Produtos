@@ -11,6 +11,9 @@
 	
 	RewriteRule ^produtos/?$ produtos.php [NC,L]
 	RewriteRule ^cad_produto/?$ cad_produto.php [NC,L]
+	RewriteRule ^usuarios/?$ usuarios.php [NC,L]
+	RewriteRule ^cad_usuario/?$ cad_usuario.php [NC,L]
+	RewriteRule ^login/?$ login.php [NC,L]
 
 
 

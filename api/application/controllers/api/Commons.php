@@ -57,7 +57,6 @@ public function gerar_jwt_geral($arrDados)
 {
     $key = $this->config->item('jwt_key');
     $payload = ['iss'   => $_SERVER['SERVER_NAME'],
-    'email' => $arrDados['email'],
     'id'    => $arrDados['id']];
     return JWT::encode($payload, $key);
 }

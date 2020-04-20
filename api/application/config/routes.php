@@ -11,3 +11,7 @@ $route['produtos/alterar'] = 'api/produtos/produtos/action/alterar';
 $route['produtos/deletar'] = 'api/produtos/produtos/action/deletar';
 //USUÁRIO
 $route['usuario/logar'] = 'api/usuario/usuario/action/logar';
+$route['usuario/listar'] = 'api/usuario/usuario/action/listar';
+$route['usuario/inserir'] = 'api/usuario/usuario/action/inserir';
+$route['usuario/buscar'] = 'api/usuario/usuario/action/buscar';
+$route['usuario/deletar'] = 'api/usuario/usuario/action/deletar';

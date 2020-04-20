@@ -1,8 +1,8 @@
 $(document).ready(function(){
 	listarProdutos();
+    $("[name='valor']").maskMoney();
 	var id = postUrl();
 	if(id != null){
-		console.log(id);
 		buscarProduto(id);
 		$("[name='prod']").val(id);
 		$("[name='status']").val(1);
@@ -58,7 +58,7 @@ $("#formCadProd").submit(function (e) {
             contentType: false
         }).done(function (r) {
         	alert(r.message);
-
+            window.location.href = 'produtos';
 
         }).fail(function () {
         	alert('Erro ao salvar produto no banco de dados!');
@@ -79,7 +79,6 @@ $("[name='variacaoCor']").change(function(){
 	}
 });
 function buscarProduto(id){
-	console.log(id);
 	$.ajax({
   method: "POST",
   url: "../api/produtos/buscar",
@@ -91,7 +90,7 @@ function buscarProduto(id){
     $("[name='descricao']").val(prod[0].descricao);
     var valor = parseFloat(prod[0].valor).toFixed(2);
     valor = valor.toString().replace('.', ',');
-    $("[name='valor']").val(prod[0].valor);
+    $("[name='valor']").val(valor);
     if(prod[0].variacao_cor == 'S'){
     	$("[name='variacaoCor']").val(2);
     	var cores = prod[0].cores;
@@ -141,11 +140,6 @@ function listarProdutos(){
         		var valor = parseFloat(prod[i].valor).toFixed(2);
         		valor = valor.toString().replace('.', ',');
         		var tdValor = $('<td>').html(valor);
-        		if(prod[i].variacao_cor == 'S'){
-        			var tdCor = $('<td>').html(prod[i].cor);
-        		}else{
-        			var tdCor = $('<td>').html(prod[i].descricao);
-        		}
         		if(prod[i].id_situacao == 1){
         			var tdSit = $('<td>').html('Ativo');
         		}else{
@@ -154,7 +148,6 @@ function listarProdutos(){
         		var btnAcao = '<a href="cad_produto?id='+prod[i].id_produto+'" class="btn btn-warning" style="width:20%;padding:8px"><i class="fa fa-pencil" aria-hidden="true"></i></a><button type="button" class="btn btn-danger btnExcluir" style="width:20%;padding:8px" data-id="'+prod[i].id_produto+'" data-desc="'+prod[i].descricao+'"><i class="fa fa-trash-o" aria-hidden="true"></i></button>';
         		var tdAcao = $('<td>').html(btnAcao).css('textAlign', 'center');
         		tr.append(tdDesc);
-        		tr.append(tdCor);
         		tr.append(tdValor);
         		tr.append(tdSit);
         		tr.append(tdAcao);

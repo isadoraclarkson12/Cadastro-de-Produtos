@@ -15,16 +15,14 @@
 <body>
 
   <div class="container">
-    <div class="row justify-content-center">
-      <form class="text-center border border-light p-5" action="#!">
+    <div class="row justify-content-center" style="margin-top: 70px">
+      <form class="text-center border border-light p-5" id="formLogin">
     <p class="h4 mb-4">Login</p>
-    <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
-    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Senha">
+    <input type="text" name="user" class="form-control mb-4" placeholder="Usuário">
+    <input type="password" name="password" class="form-control mb-4" placeholder="Senha">
 
     <div class="d-flex justify-content-around">
-        <div>
-            <a href="">Esqueceu a senha?</a>
-        </div>
+        
     </div>
     <button class="btn btn-info btn-block my-4" type="submit">Entrar</button>
 
@@ -33,15 +31,13 @@
     </div>
   </div>
 
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-
-  <script type="text/javascript" src="js/popper.min.js"></script>
-
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-
-  <script type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<script type="text/javascript" src="js/colorpicker.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="js/login.js"></script>
 
 </body>
 </html>

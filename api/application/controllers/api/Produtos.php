@@ -31,7 +31,7 @@ class Produtos extends Commons
         $return = $this->produtos_model->listar();
 
         if (sizeof($return) > 0) {
-        
+            
             return parent::set_response(['status'  => true, 'message' => 'Produtos buscados com sucesso!', 'data' => $return], 200);
         }
         return parent::set_response(['status'  => false, 'message' => 'Erro ao buscar produtos.'], 400);
@@ -68,7 +68,7 @@ class Produtos extends Commons
         $return = $this->produtos_model->buscar($this->post('id'));
 
         if (sizeof($return) > 0) {
-        
+            
             return parent::set_response(['status'  => true, 'message' => 'Produto buscado com sucesso!', 'data' => $return], 200);
         }
         return parent::set_response(['status'  => false, 'message' => 'Erro ao buscar produto.'], 400);
@@ -80,7 +80,7 @@ class Produtos extends Commons
         $return = $this->produtos_model->alterar($this->post('prod'), $this->post('descricao'), $this->post('valor'), $this->post('variacaoCor'), $this->post('color'), $this->post('wcolor'));
 
         if ($return == true) {
-        
+            
             return parent::set_response(['status'  => true, 'message' => 'Produto inserido com sucesso'], 200);
         }
         return parent::set_response(['status'  => false, 'message' => 'Erro ao buscar produtos.'], 400);
@@ -90,14 +90,14 @@ class Produtos extends Commons
         // parent::verificar_token($token); //verifica o token enviado através do header
         // $id = parent::get_payload_field('id', $token);
 
-         $return = $this->produtos_model->deletar($this->post('id'));
+     $return = $this->produtos_model->deletar($this->post('id'));
 
-        if ($return > 0) {
+     if ($return > 0) {
         
-            return parent::set_response(['status'  => true, 'message' => 'Produto removido com sucesso'], 200);
-        }
-        return parent::set_response(['status'  => false, 'message' => 'Erro ao remover produto.'], 400);
+        return parent::set_response(['status'  => true, 'message' => 'Produto removido com sucesso'], 200);
     }
-    
-    
+    return parent::set_response(['status'  => false, 'message' => 'Erro ao remover produto.'], 400);
+}
+
+
 }
