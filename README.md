@@ -5,5 +5,7 @@ Para o funcionamento do sistema:<br><br><br><br>
 4º passo: depois de criado o banco, importar o arquivo "vendas.sql".<br><br>
 5º passo: criar uma pasta com o nome desejado dentro do caminho "C:\Xampp\htdocs\nome_pasta".<br><br>
 6º passo: colar as pastas api e adm dentro da pasta mencionada acima.<br><br>
-7º passo: abrir o navegador e acessar "localhost/nome_pasta/adm/login" e utilizar o nome de usuário "master" e senha "master".<br><br>
+7º passo: abrir o navegador e acessar "localhost/nome_pasta/adm/login" e utilizar o nome de usuário "master" e senha "master".<br><br><br>
+
+<strong>Obs: as instruções anteriores são baseadas em um usuário 'root' padrão sem senha. Caso a máquina já tenha um usuário e senha configurado para o banco de dados MySql, alterar os dados de conexão dentro da pasta "api/application/config/database.php".</strong>
 
